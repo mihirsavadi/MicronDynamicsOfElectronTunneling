@@ -6,7 +6,8 @@ from utils.cellSizeDataBase import cellSizes
 from pdfGenerator.pdfgen import pdfGen
 
 class dataBaseCollator :
-    """This is a parent class to threeProbeCollator and twoProbeCollator
+    """ This class employs the csvItem and pdfGen class to provide a single wrapper to deal with the entire database
+        in one shot.
     """
 
     def __init__(self, pathToData: str, pathToDump: str) :
