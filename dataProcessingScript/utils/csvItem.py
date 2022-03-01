@@ -31,6 +31,7 @@ class csvItem :
         self.timeStamp_day      = timeDict['day'] 
         self.timeStamp_hour     = timeDict['hour']     # in 24hr format
         self.timeStamp_minute   = timeDict['minute']
+        self.timeStamp_second   = timeDict['second']
         self.timeStamp_time12hr = timeDict['time12hr'] # e.g. 10:53pm
         self.timeStamp_time24hr = timeDict['time24hr'] # e.g. 1410
 
@@ -128,8 +129,6 @@ class csvItem :
             timeString = fileNameSplit[2]
         else :
             timeString = fileNameSplit[1]
-        
-        time['whole'] = int(timeString)
 
         time['year'] = f'20{timeString[0:2]}'
         
@@ -140,8 +139,17 @@ class csvItem :
         time['hour'] = timeString[6:8]
         time['minute'] = timeString[8:10]
 
-        time['time24hr'] = timeString[6:10]
-        time['time12hr'] = datetime.strptime(timeString[6:10], "%H%M").strftime("%I:%M%p")
+        # check if seconds included or not
+        if len(timeString) == 12 :
+            time['whole'] = int(timeString)
+            time['second']  = timeString[10:]
+            time['time24hr'] = timeString[6:]
+            time['time12hr'] = datetime.strptime(timeString[6:], "%H%M%S").strftime("%I:%M:%S%p")
+        else:
+            time['whole'] = int(timeString+'00')
+            time['second']  = '00'
+            time['time24hr'] = timeString[6:10]
+            time['time12hr'] = datetime.strptime(timeString[6:10], "%H%M").strftime("%I:%M%p")
 
         return time
 

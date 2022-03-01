@@ -565,8 +565,8 @@
           \textbf{NOTE!!: } The specific probes connected to copper, platinum, and ground must be specified in the
           comments. See section~\ref{comments} for details on how to enter comments. \\
 
-          \centerline{\textbf{\{$cell_t$ coordinate\}\_\{$cell_n$ coordinate\}\_\{date in YYMMDDHHMM in 24hr\}\_\{name
-          of runfolder\}.csv}}
+          \centerline{\textbf{\{$cell_t$ coordinate\}\_\{$cell_n$ coordinate\}\_\{date in YYMMDDHHMM[SS] in
+            24hr\}\_\{name of runfolder\}.csv}}
 
           \textbf{\{name of runfolder\}} \\
           The name of the runfolder should reflect whatever the run folder is called in Clarius. This runfolder name
@@ -581,15 +581,16 @@
           \textbf{NOTE!!: } The probe connected to the platinum and the probe connected to the copper must be specified
           in the comments. See section~\ref{comments} for details on how to enter comments. \\
 
-          \centerline{\textbf{\{$cell$ coordinate\}\_\{date in YYMMDDHHMM in 24 hour system\}\_\{activity\}\_\{activity
-          parameters\}.csv}}
+          \centerline{\textbf{\{$cell$ coordinate\}\_\{date in YYMMDDHHMM[SS] in 24 hour
+            system\}\_\{activity\}\_\{activity parameters\}.csv}}
           
           \textbf{\{device coordinate\}} \\
           See the summary document for the format of this.
 
-          \textbf{\{date in YYMMDD\}} \\
+          \textbf{\{date in YYMMDDHH[SS]\}} \\
           If the date today is the 21st of Feb 2022 at 1:56pm, you put 2202211356 here. You can typically get minutes by
-          seeing when the timestamp on the CSV file.
+          seeing when the timestamp on the CSV file. In the case that two runs are made within the same minute, a two
+          digits seconds counter may be appended to the end. So 21st of Feb 2022 at 1:56:37pm would be 220221135637.
 
           \textbf{\{activity\} and \{activity parameter\}} \\
           There are four possible activities you can do to a cell - Form, Set, Reset, Observe. Each of these have their
@@ -620,8 +621,8 @@
             <rest of csv here>
           \end{verbatim}
 
-          \textbf{NOTE!!! :} Make sure to specify the probe connected to copper and platinum (and ground for 3-probe)
-          in the comments. The labels should follow what is outputted in the clarius CSV's - probe `A', `B', `C'.
+          \textbf{NOTE!!! :} Make sure to specify the probe connected to copper and platinum (and ground for 3-probe) in
+          the comments. The labels should follow what is outputted in the clarius CSV's - probe `A', `B', `C'.
 
       \subsection{Timeline For The Rest of the Project}
 
@@ -646,9 +647,5 @@
             start working on the posters and final presentations for expo on the \textbf{20th of April 2022}.
             \textbf{deadline before 31st march 2022, 8th april worst case.}
         \end{enumerate}
-    
-      
-    
-    
         
   \end{document}
