@@ -1,4 +1,4 @@
-# Micron Dynamics of Electron Tunneling Data Processing Script
+# Micron Dynamics of Electron Tunneling - Repository and Data Processing
 
 This repository contains the database and data processing script that we used in our Senior Design Project, which
 involves stimulating cells in novel ReRAM arrays to induce thermal energy transfer and observe associated electron
@@ -17,3 +17,5 @@ All the python modules required to run this script is located at 'dataProcessing
 All our most up to date data is located at './data/'
 
 All our script outputs are directed into './testDump/'
+
+Note that the modules listed in 'dataProcessingScript/lib/\_\_init\_\_.py' are required to run the script. Most of them are stock modules, for the rest, simply run 'pip install numpy matplotlib reportlab'.
