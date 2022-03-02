@@ -94,9 +94,9 @@ class dataBaseCollator :
 
             summaryReportDict[key] = cellSummaryDict
 
-        outputTextFile = ["Cell Coordinate,Cell Size,no. of times stimulated,last accessed"]
+        outputTextFile = ["Cell Coordinate,Cell Size,no. of times stimulated,last stimulated"]
         for key, value in summaryReportDict.items() :
-            outputTextFile.append(f"({key}), {value['cellSize']}, {value['timesAccessed']}, {value['lastAccessed']}")
+            outputTextFile.append(f"({key}),{value['cellSize']},{value['timesAccessed']},{value['lastAccessed']}")
 
         file = open(self.pathToDumpReport+f'/cellsUsedSummary.txt', 'w')
         for line in outputTextFile :
