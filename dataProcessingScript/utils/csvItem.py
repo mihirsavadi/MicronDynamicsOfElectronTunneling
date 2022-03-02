@@ -202,9 +202,9 @@ class csvItem :
                 aParams['copperV']                = '<platinum voltage should be entered in comments>'
 
             elif self.activity == 'observe' :
-                aParams['startV']                 = '<3 probe observe activity, so invalid>'
-                aParams['endV']                   = '<3 probe observe activity, so invalid>'
-                aParams['rampRate']               = '<3 probe observe activity, so invalid>'
+                aParams['startV']                 = '<2 probe observe activity, so invalid>'
+                aParams['endV']                   = '<2 probe observe activity, so invalid>'
+                aParams['rampRate']               = '<2 probe observe activity, so invalid>'
                 aParams['complianceCurrent']      = float(fileNameSplit[-1][:-6])
                 aParams['complianceCurrentUnits'] = fileNameSplit[-1][-6:-4]
                 aParams['platinumV']              = fileNameSplit[3] + 'V'
