@@ -17,6 +17,7 @@
   \usepackage{mathtools}
   \usepackage{listings}
   \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+  \usepackage[normalem]{ulem}
 
   % below for easy inclusion of code
   \usepackage{listings}
@@ -55,8 +56,11 @@
         it, and the behavior of neighboring cells will be observed by reading the electrical characteristics they
         exhibit.
 
-        This document is chronologically laid out -- both in terms of timeline-records and various descriptions -- as
-        per the order in which we intend to progress into each stage of our project.
+        The github repository linked below contains all our measured data; the code for our data processing script which
+        we used to automate our data compilation and interpretation process; and the historical report files generated
+        from said script.
+
+        \url{https://github.com/mihirsavadi/MicronDynamicsOfElectronTunneling}
     \end{abstract}
 
     \newpage
@@ -630,21 +634,32 @@
         the following timeline:
         
         \begin{enumerate}
-          \item Wafer needs to get done. \textbf{deadline before 20th Feb 2022}
-          \item While the wafer is being done, and for some time after it is done, random cell-pairs needs to be played
-            with in order to build an intuition into what $V$ and $Icc$ shapes will be the most conducive for our test
-            cycle. Note, in order to maintain consistency, the cell-pairs used here should not be included in our final
-            cell-pair set for data collection. \textbf{deadline before 27th Feb}
+          \item \textbf{[done]} Wafer needs to get done. \textbf{deadline before 20th Feb 2022}
+          \item \textbf{[done]} While the wafer is being done, and for some time after it is done, random cell-pairs
+            needs to be played with in order to build an intuition into what $V$ and $Icc$ shapes will be the most
+            conducive for our test cycle. Note, in order to maintain consistency, the cell-pairs used here should not be
+            included in our final cell-pair set for data collection. \textbf{deadline before 27th Feb}
+          \item \textbf{[interruption]} From the previous step it was discerned that, from the various strange cell
+            performance characteristics that were observed, there were significant manufacturing defects in the wafer.
+            Cell cycle lifetimes were very short (2-5 cycles for 10um and 0 to 2 for 15um); set's only worked with
+            higher $I_{cc}$ than for form's, which was strange; and our third ground probe was faulty -- found by the
+            clarius consistently showing cells to be set even though they had never been stimulated before. We were not
+            able to accomplish the next step as a result -- creating an idealized test cycle during our 3rd of march
+            meeting -- since we had no steady information to work off of. As a result, over spring break, Nick and
+            Amrita were going to be in Blacksburg and would be working on creating a new wafer and collecting the
+            information that we needed to get us out of the mud and hopefully regain our footing.
           \item Build an idealized test cycle -- characterized in a csv for excel sheet which can then be plotted. Heavy
             input from Dr. Orlowski and Amrita will be required here (if not the majority of input). The intended
-            cell-pair set for final data collection will also need to be determined here. \textbf{deadline before 6th
-            March 2022}
+            cell-pair set for final data collection will also need to be determined here. \textbf{\sout{deadline before
+            6th March 2022} t.b.d}
           \item Based on the idealized test cycle established in the previous milestone, create a Run File that
-          replicates it as closely as possible. Needs to be tested to ensure a good match. This will likely be quite a
-          tedious job, so a full week+ needs to be dedicated to it. \textbf{deadline before 13th March 2022}
+            replicates it as closely as possible. Needs to be tested to ensure a good match. This will likely be quite a
+            tedious job, so a full week+ needs to be dedicated to it. \textbf{\sout{deadline before 13th March 2022}
+            t.b.d}
           \item Finally go ahead and run through the entire cell-pair set and complete data collection, as per
             Section~\ref{humanalgorithm}. This will likely be the most time consuming milestone to achieve. In parallel
-            start working on the posters and final presentations for expo on the \textbf{20th of April 2022}.
+            start working on the posters and final presentations for expo on the \textbf{\sout{20th of April 2022}
+            t.b.d}.
             \textbf{deadline before 31st march 2022, 8th april worst case.}
         \end{enumerate}
         
