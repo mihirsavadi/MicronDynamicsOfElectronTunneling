@@ -7,6 +7,11 @@ from matplotlib.pyplot import savefig
 from lib import *
 from utils.csvItem import csvItem
 
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib import utils
+
 class pdfGen :
     """Class to take generated matplotlib plot objects and other cell information, and create a pdf of them, in the
         established format.
