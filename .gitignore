@@ -2,3 +2,5 @@ __pycache__/
 r_on_test_plots
 R_on_(0,0,2,2)/
 *.zip
+
+*.ipynb
