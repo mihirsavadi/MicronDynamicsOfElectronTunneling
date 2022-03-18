@@ -105,6 +105,10 @@ class csvParser :
             columns.append([float(firstLine[i])])
 
         for line in self._lines[self.__lastCommentLineIdx+3:] :
+            # skip blank lines
+            if len(line.strip()) == 0:
+                continue
+
             splitLine = line[:-1].split(',')
             for j in range(0, len(self.title)) :
                 columns[j].append(float(splitLine[j]))

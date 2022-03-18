@@ -114,7 +114,7 @@ class CellAnalyzerReport:
         shutil.rmtree(self.tmpDir)
     
     def __generatePage(self, page: csvItem, i: int) -> List:
-        """Takes a CSV item and returns a list of flowables"""
+        """Takes a CSV item and returns a list of flowables. Does not work on observe"""
 
         ca = CellAnalyzer(page)
 
@@ -129,7 +129,8 @@ class CellAnalyzerReport:
             'Time': page.timeStamp_time12hr,
             'Icc': f'{page.complianceCurrent:.1f}{page.complianceCurrentUnits}',
             'Voltage Range': f'{page.startVoltage}  →  {page.endVoltage}',
-            'Ramp Rate': f'{page.rampRate}',
+            'Target Ramp Rate': f'{page.rampRate}',
+            'True Ramp Rate': f'{ca.ramp_rate:.3f} V/s*',
             'Cycle': self.state.cycle
         })
 
@@ -169,7 +170,7 @@ class CellAnalyzerReport:
                 'R2': self.state.r2
             }, ignore_index=True)
 
-            self.summaryTable.append([self.state.cycle, self.state.set_icc, self.state.set_voltage, f'{self.state.r_on:.2f}', f'{self.state.r2:.3f}'])
+            self.summaryTable.append([self.state.cycle, self.state.set_icc, f'{self.state.set_voltage:.2f}', f'{self.state.r_on:.2f}', f'{self.state.r2:.3f}'])
             self.prevState = self.state
             self.state = ProcessState(self.state.cycle + 1, None, None, None, None)
     

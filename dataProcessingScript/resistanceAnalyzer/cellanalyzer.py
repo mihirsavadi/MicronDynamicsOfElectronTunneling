@@ -45,7 +45,8 @@ class CellAnalyzer:
         """Takes the csv file and returns a pandas data frame"""
         df = pd.DataFrame({
             'AI': self.metadata.probeA_current,
-            'AV': self.metadata.probeA_voltage
+            'AV': self.metadata.probeA_voltage,
+            'Time': self.metadata.timeAxis
         })
 
         return df
@@ -159,7 +160,7 @@ class CellAnalyzer:
             Linear best fit quality, indirectly returned in property `r2`.
         """
         if not self.activity() == 'reset':
-            raise Exception(f"resistance() called on data from {self.activity()}: {self.file}")
+            raise Exception(f"resistance() called on data from {self.activity()}")
         
         idx = self.__linear_idx
         i = self.df['AI'].values
@@ -172,10 +173,32 @@ class CellAnalyzer:
         # now we will take the data up until idx and perform a linear fit to it to obtain the resistance
         s_on, _, r, _, _ = linregress(v[:idx], i[:idx])
         r_on = 1 / s_on     # slope of IV curve is conductance
-        self.r2 = r ** 2 # store R^2 value from linear fit too
+        self.r2 = r ** 2    # store R^2 value from linear fit too
 
         return r_on
     
+    @cached_property
+    def ramp_rate(self) -> float:
+        """Calculates the true ramp rate of the data in V/s"""
+    
+        if self.activity() == 'observe':
+            raise Exception(f"ramp_rate() called on data from observe")
+
+        v = np.abs(self.df['AV'].values)
+        series = v >= 1
+        d = np.diff(series)
+
+        crosses = np.argwhere(d)
+
+        if len(crosses) == 0:
+            return self.df['AV'][-1] / self.df['Time'][-1]
+        
+        else:
+            idx = crosses[0][0]
+
+            return self.df['AV'][idx] / self.df['Time'][idx]
+
+
     def plot(self, outfile: str):
         """Plots IV-curve annotated with what the algorithm interpreted from the data, and saves in `outfile`"""
 
