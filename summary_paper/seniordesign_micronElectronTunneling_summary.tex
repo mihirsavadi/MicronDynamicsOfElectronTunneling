@@ -503,32 +503,54 @@
             creating a series of Run Files within a single Run Folder.
         \end{enumerate}
 
+      \subsection{Wafers Currently on Hand} \label{wafers}
+
+        Details about wafers we have produced for the express purpose of data collection are referred below:
+
+          \begin{itemize}
+            \item [Wafer 1] 
+              \begin{itemize}
+                \item [] \textbf{Date Created :} ???
+                \item [] \textbf{Comments :} Copper electrodes faulty. 23nm of Tantalum Oxide (manufacturing limit is
+                  25nm). Platinum is 50nm and Copper is 150nm. Strange form and set behavior. Super short cell lifespan
+                  of less than 5 to 10 cycles. 
+              \end{itemize}
+            \item [Wafer 2] 
+              \begin{itemize}
+                \item [] \textbf{Date Created :} 11th March 2022
+                \item [] \textbf{Comments :} No faulty copper electrodes. 25nm of Tantalum Oxide. Platinum is 50nm and    
+                  Copper is 150nm.
+              \end{itemize}
+          \end{itemize}
+
       
       \subsection{The Human Algorithm for Data Collection} \label{humanalgorithm}
 
         The following series of steps is run for each cell-pair in a pre-determined cell-pair set. This cell-pair set,
         and the positional and size variances within it, needs to be established before commencing data collection.
-
+        
+        \textit{The following steps have been deprecated. The same overall approach is still being used, however we are
+        less hard-ass-ey about the details, as long as the ultimate goal (stated below) is achieved efficiently.}
         \begin{enumerate}
-          \item Form and set $cell_n$ for every cell pair. With a fresh untouched wafer each $cell_n$ would have never
-            been formed before.
-          \item Create a master directory called ``data''. Then, starting from the first cell-pair in the cell-pair set,
-            do the following:
+          \item \sout{Form and set $cell_n$ for every cell pair. With a fresh untouched wafer each $cell_n$ would have
+            never been formed before.}
+          \item \sout{Create a master directory called ``data''. Then, starting from the first cell-pair in the
+            cell-pair set, do the following:}
           \begin{enumerate}
-            \item Set $P_t$, $P_n$, and $P_{gnd}$ appropriately on the wafer according to the identified coordinates of
-              the target cell-pair.
-            \item Click run the Run Folder representing the intended test cycle.
-            \item Collect the csv's produced by clarius into a thumb-drive, and name them with the following naming
-              convention: ``[coordinate of $cell_t$]\_[coordinate of $cell_n$]\_[name of test cycle]\_measurement.csv''.
-              The coordinate entries will follow Eq~\ref{namingconvention}.
-            \item Take the best picture of the view through the microscope of the probes placed on $cell_n$ and
+            \item \sout{Set $P_t$, $P_n$, and $P_{gnd}$ appropriately on the wafer according to the identified
+              coordinates of the target cell-pair.}
+            \item \sout{Click run the Run Folder representing the intended test cycle.}
+            \item \sout{Collect the csv's produced by clarius into a thumb-drive, and name them with the following
+              naming convention: ``[coordinate of $cell_t$]\_[coordinate of $cell_n$]\_[name of test
+              cycle]\_measurement.csv''. The coordinate entries will follow Eq~\ref{namingconvention}.}
+            \item \sout{Take the best picture of the view through the microscope of the probes placed on $cell_n$ and
               $cell_t$, and save it somewhere according to the following naming convention: ``[coordinate of
-              $cell_t$]\_[coordinate of $cell_n$]\_scopeimage.jpg''
-            \item In a text file called ``[coordinate of $cell_t$]\_[coordinate of $cell_n$]\_notes.txt'' include the
-              date and time that cell-pair was tested, the date and time $cell_n$ was initially formed and set, as well
-              as any other notes or observations that were made.
-            \item Save the .jpg, .csv, and .txt described above into a subdirectory under the master ``data'' directory
-              called ``[coordinate of $cell_t$]\_[coordinate of $cell_n$]''.
+              $cell_t$]\_[coordinate of $cell_n$]\_scopeimage.jpg''}
+            \item \sout{In a text file called ``[coordinate of $cell_t$]\_[coordinate of $cell_n$]\_notes.txt'' include
+              the date and time that cell-pair was tested, the date and time $cell_n$ was initially formed and set, as
+              well as any other notes or observations that were made.}
+            \item \sout{Save the .jpg, .csv, and .txt described above into a subdirectory under the master ``data''
+              directory called ``[coordinate of $cell_t$]\_[coordinate of $cell_n$]''.}
           \end{enumerate}
         \end{enumerate}
 
