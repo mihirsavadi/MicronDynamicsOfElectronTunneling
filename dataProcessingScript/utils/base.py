@@ -1,9 +1,12 @@
 # Mihir Savadi 24th February 2021
 
+from resistanceAnalyzer.report import CellAnalyzerReport
 from lib import *
 from utils.csvItem import csvItem
 from utils.cellSizeDataBase import cellSizes
 from pdfGenerator.pdfgen import pdfGen
+
+from tqdm import tqdm
 
 class dataBaseCollator :
     """ This class employs the csvItem and pdfGen class to provide a single wrapper to deal with the entire database
@@ -23,8 +26,9 @@ class dataBaseCollator :
 
         # then create a pdf for each of these sublists using the pdfGenerator class and put them in a new reports
         # folder.
-        for key,value in self.csvData.items() :
+        for key,value in tqdm(self.csvData.items()) :
             pdfGen(value, self.summaryDict, self.pathToDumpReport)
+            CellAnalyzerReport(value, self.summaryDict, self.pathToDumpReport).generateReport()
 
 
     def __organizeCSVs(self) -> OrderedDict :

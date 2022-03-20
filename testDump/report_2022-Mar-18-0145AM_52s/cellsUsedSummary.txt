@@ -1,0 +1,23 @@
+Cell Coordinate,Cell Size,no. of times stimulated,last stimulated
+(wafer1,0,0,-1,-1,0,1),10um,17,2022/February/24 at 12:30PM
+(wafer2,0,1,-1,-1,1,0),10um,24,2022/March/17 at 03:58:40PM
+(wafer1,0,0,-1,-1,2,2),10um,27,2022/February/28 at 05:01PM
+(wafer1,2,0,-1,-1,4,4),15um,26,2022/March/01 at 03:26:18PM
+(wafer2,2,0,-1,-1,0,3),15um,29,2022/March/17 at 05:59:07PM
+(wafer2,2,0,-1,-1,0,4),15um,30,2022/March/17 at 05:31:28PM
+(wafer2,0,1,-1,-1,0,1),10um,1,2022/March/17 at 04:01:04PM
+(wafer2,0,1,-1,-1,3,4),10um,16,2022/March/17 at 04:36:43PM
+(wafer2,0,1,-1,-1,4,4),10um,5,2022/March/17 at 04:45:07PM
+(wafer1,0,0,-1,-1,3,4),10um,8,2022/March/01 at 02:48:28PM
+(wafer2,0,1,-1,-1,2,2),10um,22,2022/March/17 at 04:12:31PM
+(wafer1,0,0,-1,-1,4,4),10um,12,2022/March/01 at 02:32:26PM
+(wafer2,0,1,-1,-1,1,1),10um,3,2022/March/17 at 03:54:56PM
+(wafer1,0,0,-1,-1,0,0),10um,11,2022/February/21 at 02:19PM
+(wafer1,2,0,-1,-1,0,0),15um,8,2022/February/28 at 04:07PM
+(wafer2,0,1,-1,-1,3,3),10um,3,2022/March/17 at 04:17:29PM
+(wafer2,0,1,-1,-1,4,3),10um,2,2022/March/17 at 04:46:59PM
+(wafer2,0,0,-1,-1,0,3),10um,2,2022/March/17 at 03:01:49PM
+(wafer2,0,1,-1,-1,0,0),10um,1,2022/March/17 at 03:11:13PM
+(wafer2,0,0,-1,-1,0,2),10um,2,2022/March/17 at 02:57:56PM
+(wafer2,0,1,-1,-1,2,3),10um,3,2022/March/17 at 04:14:24PM
+(wafer2,0,0,-1,-1,1,3),10um,1,2022/March/17 at 03:03:00PM
