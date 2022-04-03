@@ -94,8 +94,8 @@ class Run(ABC):
         """
 
         filename = self._csv_filename()
-        # omitting file makes pandas return CSV as a stringf
-        contents = self._data.to_csv(index=False)
+        # omitting file makes pandas return CSV as a string
+        contents = self._data.to_csv(index=False, line_terminator='\n')
 
         # tack on any extras to the comments, starting with a newline
         comments = self.comment + (f'\n{self._extra()}' if self._extra() else '')
