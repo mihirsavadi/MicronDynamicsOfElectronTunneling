@@ -232,6 +232,9 @@ def load_yml_file(filename: str) -> List[Run]:
         
         # update
         old_params[type] = new
+
+        if 'subgrid' not in v['position']:
+            v['position']['subgrid'] = '-1,-1'
         old_pos['position'] = v['position']
 
         # parse the position into Cell object and pass it into our current Run
