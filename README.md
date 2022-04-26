@@ -32,3 +32,8 @@ The python modules required to run all the scripts in this repository are as as 
     - pandas  
     - pytz  
     - tqdm  
+
+During the year long course of this project we maintained an internal google drive which contained all of our
+deliverables and other course specific items, as well as footage etc. Because a lot of these files are too large for
+github, they are not included in this github repository. Instead, they can be found 
+[at this link](https://drive.google.com/file/d/1UdM93mss8CJoWbe4B_h3I2H1SIwsKGog/view?usp=sharing).
